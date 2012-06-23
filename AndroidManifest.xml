@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      android:versionCode="1"
+      android:versionName="1.0" package="ru.alunev.touchalarm">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <!-- Main UI activity -->
+        <activity android:label="@string/app_name" android:name="TouchAlarmActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Cron-scheduled task triggered on alarm time -->
+        <receiver android:name="TouchAlarmReceiver" android:process=":remote"/>
+
+        <!-- Service that plays sound -->
+        <service android:name="AlarmPlayer" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.android.alarmclock.PLAY_ALARM" />
+            </intent-filter>
+        </service>
+    </application>
+
+    <uses-sdk android:minSdkVersion="3"/>
+</manifest>

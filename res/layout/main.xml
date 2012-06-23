@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ru.alunev.touchalarm.components.TouchClock
+        android:id="@+id/TouchClock"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:keepScreenOn="true"
+        android:focusableInTouchMode="false"
+        android:saveEnabled="false"
+        android:layout_centerInParent="true"
+        android:layout_height="300dp" android:layout_width="300dp">
+    </ru.alunev.touchalarm.components.TouchClock>
+
+    <TextView
+        android:id="@+id/DigitalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00" android:layout_above="@+id/TouchClock" android:layout_centerHorizontal="true" android:textSize="30sp">
+    </TextView>
+
+    <Button
+        android:id="@+id/ShutUp"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false"
+        android:text="Shut Up!"
+        android:visibility="visible"
+        android:layout_gravity="bottom|center"
+        android:layout_alignParentLeft="false"
+        android:layout_width="100sp" android:layout_below="@+id/TouchClock" android:layout_alignParentBottom="false" android:layout_alignParentRight="false" android:layout_alignRight="@+id/TouchClock" android:textSize="20sp">
+    </Button>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:id="@+id/SetButton"
+        android:text="Set"
+        android:layout_width="100sp" android:layout_alignParentBottom="false" android:layout_below="@+id/TouchClock" android:layout_alignLeft="@+id/TouchClock" android:textSize="20sp">
+    </Button>
+</RelativeLayout>
